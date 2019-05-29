@@ -29,7 +29,7 @@ export class CarsListComponent implements OnInit {
       deliveryDate: '24-05-2017',
       deadline: '03-06-2016',
       client: {
-        firstName: 'Micha�',
+        firstName: 'Michał',
         surname: 'Nowak'
       },
       cost: 1200,
