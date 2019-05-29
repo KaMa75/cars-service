@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { CarsListComponent } from './cars/cars-list.component';
+import { CarsListComponent } from './cars/cars-list/cars-list.component';
 
 @NgModule({
   declarations: [
