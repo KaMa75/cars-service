@@ -1,0 +1,21 @@
+@import 'variables';
+
+.cs-table {
+
+  background: $light;
+
+  th {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $thead;
+  }
+
+  td {
+    color: $thead;
+  }
+
+  .row-error {
+    border-left: 2px solid $warn;
+  }
+
+}
