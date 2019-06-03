@@ -34,7 +34,6 @@ export class CarsListComponent implements OnInit {
     this.carsService.getCars().subscribe((cars: Car[]) => {
       this.cars = cars;
       this.countTotalCost();
-      console.log(this.cars);
     });
   }
 
