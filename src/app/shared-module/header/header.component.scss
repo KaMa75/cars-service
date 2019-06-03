@@ -1,0 +1,14 @@
+@import '../../../assets/styles/variables';
+
+.header {
+  background-color: $light;
+  padding: 15px;
+  margin-bottom: 15px;
+
+  .levels {
+    font-size: 24px;
+    font-weight: 700;
+    color: $text;
+    text-transform: uppercase;
+  }
+}
