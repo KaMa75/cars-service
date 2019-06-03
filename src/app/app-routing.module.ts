@@ -4,6 +4,11 @@ import { NgModule } from '@angular/core';
 
 const APP_ROUTES: Route[] = [
   {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'cars'
+  },
+  {
     path: 'cars',
     component: CarsListComponent
   }
