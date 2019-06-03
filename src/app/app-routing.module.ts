@@ -11,6 +11,10 @@ const APP_ROUTES: Route[] = [
   {
     path: 'cars',
     component: CarsListComponent
+  },
+  {
+    path: 'users',
+    component: CarsListComponent
   }
 ];
 
