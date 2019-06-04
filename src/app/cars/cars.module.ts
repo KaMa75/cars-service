@@ -6,6 +6,7 @@ import { TotalCostComponent } from './total-cost/total-cost.component';
 import { SharedModule } from '../shared-module/shared.module';
 import { CarDetailComponent } from './car-detail/car-detail.component';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     HttpClientModule,
     SharedModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   exports: [
     CarsListComponent

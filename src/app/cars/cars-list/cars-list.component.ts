@@ -3,6 +3,7 @@ import { Car } from '../models/car';
 import { TotalCostComponent } from '../total-cost/total-cost.component';
 import { CarsService } from '../cars.service';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-cars-list',
@@ -19,10 +20,29 @@ export class CarsListComponent implements OnInit {
 
   cars: Car[];
 
-  constructor(private carsService: CarsService, private router: Router) { }
+  carForm: FormGroup;
+
+  constructor(private carsService: CarsService, private router: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.loadCars();
+    this.carForm = this.buildCarForm();
+  }
+
+  buildCarForm() {
+    return this.formBuilder.group({
+      model: ['', Validators.required],
+      type: [''],
+      plate: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(7)]],
+      deliveryDate: [''],
+      deadline: [''],
+      color: [''],
+      power: [''],
+      clientFirstName: [''],
+      clientSurname: [''],
+      cost: [''],
+      isFullyDamaged: ['']
+    });
   }
 
   countTotalCost(): void {
