@@ -41,7 +41,8 @@ export class CarsListComponent implements OnInit {
       clientFirstName: [''],
       clientSurname: [''],
       cost: [''],
-      isFullyDamaged: ['']
+      isFullyDamaged: [''],
+      year: ['']
     });
   }
 
@@ -55,6 +56,12 @@ export class CarsListComponent implements OnInit {
     this.carsService.getCars().subscribe((cars: Car[]) => {
       this.cars = cars;
       this.countTotalCost();
+    });
+  }
+
+  addCar() {
+    this.carsService.addCar(this.carForm.value).subscribe(() => {
+      this.loadCars();
     });
   }
 

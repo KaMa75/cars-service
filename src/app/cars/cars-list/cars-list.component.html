@@ -67,11 +67,12 @@
 <p class="data-header">Add a new car</p>
 
 <div class="data-container">
-  <form class="form" [formGroup]="carForm">
+  <form class="form" [formGroup]="carForm" (ngSubmit)="addCar()">
     <div class="row form-group">
       <div class="col-sm-4">
         <label>Model</label>
         <input type="text" class="form-control" placeholder="model" formControlName="model">
+        <p class="error" *ngIf="!carForm.get('model').valid && carForm.get('model').dirty">This field is required</p>
       </div>
       <div class="col-sm-4">
         <label>Type</label>
@@ -80,6 +81,7 @@
       <div class="col-sm-4">
         <label>Plate</label>
         <input type="text" class="form-control" placeholder="plate" formControlName="plate">
+        <p class="error" *ngIf="!carForm.get('plate').valid && carForm.get('plate').dirty">This field is required and must contain 3-7 characters</p>
       </div>
     </div>
 
@@ -93,9 +95,8 @@
         <input type="text" class="form-control" placeholder="deadline" formControlName="deadline">
       </div>
       <div class="col-sm-4">
-        <label>Is car fully damaged
-          <input type="checkbox">
-        </label>
+        <label>Year</label>
+        <input type="text" class="form-control" placeholder="year" formControlName="year">
       </div>
     </div>
 
@@ -115,19 +116,25 @@
     </div>
 
     <div class="row form-group">
-      <div class="col-sm-6">
+      <div class="col-sm-4">
         <label>Client First Name</label>
         <input type="text" class="form-control" placeholder="client first name" formControlName="clientFirstName">
       </div>
-      <div class="col-sm-6">
+      <div class="col-sm-4">
         <label>Client Surname</label>
         <input type="text" class="form-control" placeholder="client surname" formControlName="clientSurname">
+      </div>
+      <div class="col-sm-4">
+        <label>Is car fully damaged
+          <input type="checkbox">
+        </label>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-sm-12">
-        <button type="submit" class="btn btn-primary" [disabled]="!carForm.valid">Add car</button>
+      <div class="col-sm-12 text-right">
+        <button type="submit" class="btn btn-primary" [disabled]="carForm.invalid">Add car</button>
+        <button type="button" class="btn btn-default ml-2" (click)="carForm.reset()">Reset</button>
       </div>
     </div>
 

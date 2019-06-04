@@ -17,3 +17,10 @@ body {
   background-color: $light;
   margin: 15px;
 }
+
+.error {
+  background-color: $warn;
+  color: $light;
+  font-size: 11px;
+  padding: 4px 8px;
+}
